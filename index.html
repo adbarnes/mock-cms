@@ -11,8 +11,10 @@
 
 <body class="antialiased font-sans bg-gray-200" x-data="{ sidebarOpen: false }">
   <div class="h-screen flex">
-    <div :class="[sidebarOpen ? 'translate-x-0 ease-out transition-medium' : '-translate-x-full ease-in transition-medium']" class="transform fixed z-30 inset-y-0 left-0 w-64 px-8 py-4 bg-gray-100 border-r overflow-auto lg:static lg:inset-auto lg:translate-x-0 duration-150">
-      
+    <div
+      :class="[sidebarOpen ? 'translate-x-0 ease-out transition-medium' : '-translate-x-full ease-in transition-medium']"
+      class="transform fixed z-30 inset-y-0 left-0 w-64 px-8 py-4 bg-gray-100 border-r overflow-auto lg:static lg:inset-auto lg:translate-x-0 duration-150">
+
       <div class="-mx-3 pl-3 pr-1 flex items-center justify-between">
         <span class="flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="text-blue-400">
@@ -71,9 +73,13 @@
             <div class="flex-1 min-w-0 flex pl-4">
               <div class="flex">
                 <!-- Sidebar open button -->
-                <button class="text-gray-600 ml-2 lg:hidden mr-3"><svg fill="none" viewBox="0 0 24 24" class="h-6 w-6" @click="sidebarOpen = true"><path d="M4 6h16M4 12h16M4 18h7" stroke-linecap="round" stroke-width="2" stroke="currentColor"></path></svg></button>
+                <button class="text-gray-600  lg:hidden mr-3"><svg fill="none" viewBox="0 0 24 24" class="h-6 w-6"
+                    @click="sidebarOpen = true">
+                    <path d="M4 6h16M4 12h16M4 18h7" stroke-linecap="round" stroke-width="2" stroke="currentColor">
+                    </path>
+                  </svg></button>
                 <button
-                  class="bg-gray-200 hover:bg-gray-400 text-gray-500 font-bold py-1 px-4 rounded inline-flex items-center mr-3">
+                  class="bg-gray-200 hover:bg-gray-400 text-gray-500 font-bold py-1 px-4 rounded inline-flex items-center mr-3 hidden sm:flex">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-current w-4 h-4 mr-2">
                     <path class="heroicon-ui"
                       d="M6 18.7V21a1 1 0 0 1-2 0v-5a1 1 0 0 1 1-1h5a1 1 0 1 1 0 2H7.1A7 7 0 0 0 19 12a1 1 0 1 1 2 0 9 9 0 0 1-15 6.7zM18 5.3V3a1 1 0 0 1 2 0v5a1 1 0 0 1-1 1h-5a1 1 0 0 1 0-2h2.9A7 7 0 0 0 5 12a1 1 0 1 1-2 0 9 9 0 0 1 15-6.7z" />
@@ -82,7 +88,7 @@
                   <span class="font-bold text-blue-900">10</span>
                 </button>
                 <button
-                  class="bg-gray-200 hover:bg-gray-400 text-gray-500 font-bold py-1 px-4 rounded inline-flex items-center mr-3">
+                  class="bg-gray-200 hover:bg-gray-400 text-gray-500 font-bold py-1 px-4 rounded inline-flex items-center mr-3 hidden translate-x-20 sm:flex">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-current w-4 h-4 mr-2">
                     <path class="heroicon-ui"
                       d="M11 14.59V3a1 1 0 0 1 2 0v11.59l3.3-3.3a1 1 0 0 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 1.4-1.42l3.3 3.3zM3 17a1 1 0 0 1 2 0v3h14v-3a1 1 0 0 1 2 0v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3z" />
@@ -91,10 +97,8 @@
                 </button>
 
                 <button
-                  class="bg-gray-200 hover:bg-gray-400 text-gray-500 font-bold py-1 px-4 rounded inline-flex items-center mr-3">
-                  <!-- <svg class="fill-current w-4 h-4 mr-2" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19 2H1C0.447715 2 0 2.44772 0 3V15.9268C0 16.4791 0.447715 16.9268 1 16.9268H12.1818C12.7341 16.9268 13.1818 17.3745 13.1818 17.9268V20L17.0059 17.1273C17.1791 16.9972 17.3899 16.9268 17.6065 16.9268H19C19.5523 16.9268 20 16.4791 20 15.9268V3C20 2.44772 19.5523 2 19 2Z"/>
-                        </svg> -->
+                  class="bg-gray-200 hover:bg-gray-400 text-gray-500 font-bold py-1 px-4 rounded inline-flex items-center mr-3 hidden sm:flex">
+
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-current w-4 h-4 mr-2">
                     <path class="heroicon-ui"
                       d="M6 14H4a2 2 0 0 1-2-2V4c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v13a1 1 0 0 1-1.7.7L16.58 18H8a2 2 0 0 1-2-2v-2zm0-2V8c0-1.1.9-2 2-2h8V4H4v8h2zm14-4H8v8h9a1 1 0 0 1 .7.3l2.3 2.29V8z" />
@@ -127,12 +131,9 @@
                 <ul x-show="isOpen" @click.away="isOpen = false"
                   class="absolute font-normal bg-white shadow overflow-hidden rounded w-48 border mt-2 py-1 right-0 z-20 transform ease-out transition-medium duration-150"
                   x-transition:enter="transition transform origin-top-right ease-out duration-200"
-                        x-transition:enter-start="opacity-0 scale-75"
-                        x-transition:enter-end="opacity-100 scale-100"
-                        x-transition:leave="transition transform origin-top-right ease-out duration-200"
-                        x-transition:leave-start="opacity-100 scale-100"
-                        x-transition:leave-end="opacity-0 scale-75"
-                  >
+                  x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100"
+                  x-transition:leave="transition transform origin-top-right ease-out duration-200"
+                  x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-75">
                   <li>
                     <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-200">
                       <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
@@ -178,32 +179,67 @@
             <h3 class="flex-shrink-0 pt-3 ml-5 text-sm font-medium text-gray-700">
               New Post
             </h3>
-            <div class="flex flex-grow flex-1 min-h-0 overflow-y-auto h-full">
-              <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 m-4 flex flex-auto flex-col">
-                <div class="mb-4">
-                  <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                    Title
-                  </label>
-                  <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100"
-                    id="username" type="text" placeholder="Username">
+            <div class="flex flex-row flex-wrap max-w-full">
+              <div class="flex flex-grow-8 flex-shrink-0 min-h-0 overflow-y-auto h-full">
+                <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 m-4 flex flex-auto flex-col">
+                  <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                      Post title
+                    </label>
+                    <input
+                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100"
+                      id="username" type="text" placeholder="Username">
+                  </div>
+                  <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                      Post content
+                    </label>
+                    <textarea
+                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded focus:outline-none focus:shadow-outline w-full bg-gray-100"></textarea>
+
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <button
+                      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                      type="button">
+                      Publish
+                    </button>
+
+                  </div>
+                </form>
+              </div>
+              <div class="flex flex-grow flex-shrink-0  min-h-0 overflow-y-auto h-full">
+                <div class="bg-white shadow-md rounded m-4 flex flex-auto flex-col pt-6">
+                  <div class="flex">
+                    <div class="w-1/3 border-b border-solid px-8 pb-6 text-gray-700 text-sm font-bold">Slug</div>
+                    <div class="w-2/3 border-b border-solid px-8 pb-6">Lorem ipsum dolor sit amet elit.</div>
+                  </div>
+                  <div class="flex">
+                    <div class="w-1/3 border-b border-solid px-8 py-6 text-gray-700 text-sm font-bold">Author</div>
+                    <div class="w-1/2 border-b border-solid px-8 py-6">Joe Bloggs</div>
+                  </div>
+                  <div class="flex">
+                    <div class="w-1/3 border-b border-solid px-8 py-6 text-gray-700 text-sm font-bold">Post Date</div>
+                    <div class="w-1/2 border-b border-solid px-8 py-6">12/12/2019</div>
+                  </div>
+                  <div class="flex">
+                    <div class="w-1/3 border-b border-solid px-8 py-6 text-gray-700 text-sm font-bold">Expiry Date</div>
+                    <div class="w-1/2 border-b border-solid px-8 py-6">12/12/2020</div>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="w-1/3 px-8 py-8 text-gray-700 text-sm font-bold">Enable</div>
+                    <div class="w-1/2 px-8 py-8"><span
+                        class="sm:inline-flex p-1 border bg-blue-500 rounded-md"><button
+                          class="px-2 py-1 rounded"><svg fill="none" viewBox="0 0 24 24" class="h-3 w-3 text-gray-600">
+                           
+                          </svg></button> <button class="px-2 py-1 bg-white rounded shadow"><svg fill="none"
+                            viewBox="0 0 24 24" class="h-3 w-3 text-gray-600">
+                           
+                          </svg></button></span></div>
+                  </div>
+
                 </div>
-                <div class="mb-6">
-                  <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
-                    Post content
-                  </label>
-                  <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded focus:outline-none focus:shadow-outline w-full bg-gray-100">ss</textarea>
-                  
-                </div>
-                <div class="flex items-center justify-between">
-                  <button
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    type="button">
-                    Post
-                  </button>
-                  
-                </div>
-              </form>
+              </div>
             </div>
           </div>
         </main>
